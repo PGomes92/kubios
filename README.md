@@ -1,4 +1,4 @@
-KUBIOS Import & Export for Python
+# KUBIOS Import & Export for Python
 
 This Python package enables easy exportation of NN/RR interval series or signals to KUBIOS HRV friendly files and structured formats and to import HRV analysis results from KUBIOS HRV report files in .txt format.
 
@@ -49,6 +49,9 @@ results = import_report('SampleReport.txt')
 # Get SDNN value
 results['sdnn']
 ```
+
+## Dependencies
+- [numpy](http://www.numpy.org)
 
 ## Context of this Work
 This package is under development within the scope of my master thesis _"Development of an Open-Source Python Toolbox for Heart Rate Variability (HRV)"_ at the [University of Applied Sciences Hamburg, Germany (Faculty Life Sciences, Department of Biomedical Engineering)](https://www.haw-hamburg.de/fakultaeten-und-departments/ls/studium-und-lehre/master-studiengaenge/mbme.html) and [PLUX wireless biosignals, S.A.](http://www.plux.info), Lisbon, Portugal.
