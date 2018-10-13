@@ -59,6 +59,9 @@ results = import_report('SampleReport.txt')
 results['sdnn']
 ```
 
+## Dependencies
+- [numpy](http://www.numpy.org)
+
 ## Context of this Work
 This package is under development within the scope of my master thesis _"Development of an Open-Source Python Toolbox for Heart Rate Variability (HRV)"_ at the [University of Applied Sciences Hamburg, Germany (Faculty Life Sciences, Department of Biomedical Engineering)](https://www.haw-hamburg.de/fakultaeten-und-departments/ls/studium-und-lehre/master-studiengaenge/mbme.html) and [PLUX wireless biosignals, S.A.](http://www.plux.info), Lisbon, Portugal.
 
