@@ -29,3 +29,15 @@ Last Update
 """
 # allow lazy import
 from kubios import *
+
+# Package info
+__author__ = "Pedro Gomes"
+__email__ = "pgomes92@gmail.com"
+__maintainer__ = "Pedro Gomes"
+__status__ = "Development"
+__license__ = "BSD 3-Clause License"
+__version__ = "0.1"
+name = "kubios"
+description = "Python package to support KUBIOS file management."
+long_description = "Python package to export RRI data in KUBIOS readable format and to read/import KUBIOS results " \
+				   "from KUBIOS reports."

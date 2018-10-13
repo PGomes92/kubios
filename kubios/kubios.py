@@ -87,10 +87,10 @@ def export_nni(series=None, output_path=None, output_file=None, info=None):
 
 	header = '# SIGNAL/SERIES EXPORT - KUBIOS\n' \
 			 '# File:				%s\n' \
-			 '# Device:	 		%s\n' \
+			 '# Device:	 			%s\n' \
 			 '# DeviceID / MAC: 	%s\n' \
-			 '# Sampling rate: 	%s\n' \
-			 '# Resolution:		%s\n' \
+			 '# Sampling rate: 		%s\n' \
+			 '# Resolution:			%s\n' \
 			 '# Comment:			%s\n' % vals
 
 	# Output data

@@ -1,13 +1,21 @@
-KUBIOS Import & Export for Python
+# KUBIOS Import & Export for Python
 
 This Python package enables easy exportation of NN/RR interval series or signals to KUBIOS HRV friendly files and structured formats and to import HRV analysis results from KUBIOS HRV report files in .txt format.
 
 The exported signals are stored in the Type 1 format as presented on page 14 and 15 of the [KUBIOS User Guide](https://www.kubios.com/downloads/Kubios_HRV_Users_Guide.pdf).
 
+## Installation
+This package can be installed using the `pip` tool:
+
+```python
+pip install kubios
+```
+
 ## How to Use this Package
 
 #### export_nni()
-Use the ``export_nni()``` function to export a series of NN/RR interval or ECG signal data to a KUBIOS readable file format.
+Use the `export_nni()` function to export a series of NN/RR interval or ECG signal data to a KUBIOS readable file format.
+
 ```python
 import numpy as np
 from kubios import export_nni
@@ -19,7 +27,7 @@ nni = np.load('SampleSeries.npy')
 export_nni(nni)
 ```
 
-Use the ```output_path``` variable to specify the file path where to store the exported file and ```output_file``` to specify the file name. Use only the ```output_file``` if you want to set the absolute file path in a single string. If no value for the ```output_file``` is provided, a file name (incl. time stamp) will automatically be generated.
+Use the `output_path` variable to specify the file path where to store the exported file and `output_file` to specify the file name. Use only the `output_file` if you want to set the absolute file path in a single string. If no value for the `output_file` is provided, a file name (incl. time stamp) will automatically be generated.
 
 ```python
 import numpy as np
@@ -40,6 +48,7 @@ export_nni(nni, output_path='/my/favorite/path/')
 
 #### import_report()
 Use the ```import_report()``` function to read a KUBIOS HRV report files in .txt format. The results will be returned in a Python dictionary.
+
 ```python
 from kubios import import_report
 
