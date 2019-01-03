@@ -28,9 +28,12 @@ Last Update
 :license: BSD 3-clause, see LICENSE for more details.
 """
 # Imports
+from __future__ import absolute_import
+from __future__ import print_function
 import json
 import os
 import datetime as dt
+import six
 
 
 def export_nni(series=None, output_path=None, output_file=None, info=None):
@@ -75,12 +78,12 @@ def export_nni(series=None, output_path=None, output_file=None, info=None):
 	if info is None:
 		info = dict()
 
-	info['file'] = str(info['file']) if 'file' in info.keys() else 'n/a'
-	info['device'] = str(info['device'])if 'device' in info.keys() else 'n/a'
-	info['deviceID'] = str(info['deviceID']) if 'deviceID' in info.keys() else 'n/a'
-	info['sampling_rate'] = str(info['sampling_rate']) if 'sampling_rate' in info.keys() else 'n/a'
-	info['sampling_resolution'] = str(info['sampling_resolution']) if 'sampling_resolution' in info.keys() else 'n/a'
-	info['comment'] = str(info['comment']) if 'comment' in info.keys() else 'n/a'
+	info['file'] = str(info['file']) if 'file' in list(info.keys()) else 'n/a'
+	info['device'] = str(info['device'])if 'device' in list(info.keys()) else 'n/a'
+	info['deviceID'] = str(info['deviceID']) if 'deviceID' in list(info.keys()) else 'n/a'
+	info['sampling_rate'] = str(info['sampling_rate']) if 'sampling_rate' in list(info.keys()) else 'n/a'
+	info['sampling_resolution'] = str(info['sampling_resolution']) if 'sampling_resolution' in list(info.keys()) else 'n/a'
+	info['comment'] = str(info['comment']) if 'comment' in list(info.keys()) else 'n/a'
 
 	vals = (info['file'], info['device'], info['deviceID'], info['sampling_rate'], info['sampling_resolution'],
 			info['comment'])
@@ -159,7 +162,7 @@ def import_report(rfile=None, delimiter=','):
 	for line in content:
 		line = line.split(delimiter)
 		for key, label in hrv_parameters.items():
-			if type(label) is unicode:
+			if type(label) is six.text_type:
 				if str(label) in line[0]:
 					index = 2 if key in ['ar_total', 'ar_ratio'] else (1 if len(line) > 1 else 0)
 					try:
@@ -203,4 +206,4 @@ if __name__ == "__main__":
 	results = import_report('SampleReport.txt')
 
 	for key in results.keys():
-		print(key, results[key])
+		print((key, results[key]))
