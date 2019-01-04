@@ -28,7 +28,8 @@ Last Update
 :license: BSD 3-clause, see LICENSE for more details.
 """
 # allow lazy import
-from kubios import *
+from __future__ import absolute_import
+from .kubios import *
 
 # Package info
 __author__ = "Pedro Gomes"
