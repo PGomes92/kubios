@@ -128,7 +128,7 @@ def import_report(rfile=None, delimiter=','):
 		If 'rfile' is not a KUBIOS report file.
 	"""
 	# Check input
-	if type(rfile) is not str and type(rfile) is not file:
+	if type(rfile) is not str and not hasattr(rfile, 'read'):
 		raise TypeError('Unsupported file format. Please provide file path (str) or file handler.')
 	elif type(rfile) is str:
 		if not os.path.isfile(rfile):
